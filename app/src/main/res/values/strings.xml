@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">F1Info</string>
+
+    <string name="infoFeedItem_topTextView">Placeholder text 1</string>
+    <string name = "infoFeedItem_bottomTextView">Placeholder text 2</string>
+
+</resources>
