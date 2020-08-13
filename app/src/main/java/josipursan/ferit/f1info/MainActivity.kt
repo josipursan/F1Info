@@ -18,4 +18,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
     }
 
+    // Sada je potrebno napraviti listu RecyclerViewItem-a koja se prosljeduje ReyclerVieAdapteru koji sve te iteme prikazuje u RecyclerViewu
+    // Ovo znaci da tu (ili u nekoj fajli sastrane) moram handlati rukovanje s Reddit API-jem i povlacenje podataka iz Firebase-a za postove o stazama.
+
 }

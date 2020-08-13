@@ -5,6 +5,9 @@
 
     <dimen name = "infoFeedItem_topTextSize">18sp</dimen>
     <dimen name = "infoFeedItem_bottomTextSize">14sp</dimen>
+    <dimen name="infoFeedItem_imageViewSize">50dp</dimen>
+    <dimen name="infoFeedItem_padding">10dp</dimen>
+    <dimen name="infoFeedItem_cardMargin">5dp</dimen>
 
     <dimen name = "infoFeedItem_leftMarginFromPicutre">15dp</dimen>
 
