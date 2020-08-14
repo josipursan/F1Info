@@ -36,5 +36,9 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"           // za recyclerview
     implementation "androidx.cardview:cardview:1.0.0"       // za kartice u recyclerviewove, odnosno za pojedinacne iteme
 
+    implementation 'com.android.volley:volley:1.1.1'    //  HTTP library
+
+    implementation 'com.beust:klaxon:5.0.1' //  JSON lib
+
 
 }
