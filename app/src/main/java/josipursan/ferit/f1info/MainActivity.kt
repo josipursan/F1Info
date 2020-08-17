@@ -12,14 +12,18 @@ import com.beust.klaxon.Klaxon
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_two.*
 import org.json.JSONObject
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    val applicationOnlyGrantType = "https://oauth.reddit.com/grants/installed_client"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         startUI()
 
+        val uuid = UUID.randomUUID().toString() // Random id za device_id za reddit api
 
 
         val queue = Volley.newRequestQueue(this)
