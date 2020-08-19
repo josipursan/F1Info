@@ -2,6 +2,8 @@ package josipursan.ferit.f1info
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.android.volley.Request
@@ -23,10 +25,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         startUI()
 
-        val uuid = UUID.randomUUID().toString() // Random id za device_id za reddit api
 
-
-        val queue = Volley.newRequestQueue(this)
+        /*val queue = Volley.newRequestQueue(this)
         val url = "https://ergast.com/api/f1/2008/5/results.json"
 
         val stringRequest = StringRequest(Request.Method.GET, url,
@@ -38,7 +38,9 @@ class MainActivity : AppCompatActivity() {
             },
             Response.ErrorListener { Toast.makeText(this, "Failure", Toast.LENGTH_LONG).show()})
 
-        queue.add(stringRequest)
+        queue.add(stringRequest)*/
+
+
     }
 
     private fun startUI()
