@@ -18,18 +18,16 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val applicationOnlyGrantType = "https://oauth.reddit.com/grants/installed_client"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         startUI()
 
 
-        /*val queue = Volley.newRequestQueue(this)
+        val queue = Volley.newRequestQueue(this)
         val url = "https://ergast.com/api/f1/2008/5/results.json"
 
-        val stringRequest = StringRequest(Request.Method.GET, url,
+        /*val stringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener<String>{response ->
                 val json = JSONObject(response)
                 val extractedElement = json.getJSONObject("MRData")
@@ -39,8 +37,6 @@ class MainActivity : AppCompatActivity() {
             Response.ErrorListener { Toast.makeText(this, "Failure", Toast.LENGTH_LONG).show()})
 
         queue.add(stringRequest)*/
-
-
     }
 
     private fun startUI()
