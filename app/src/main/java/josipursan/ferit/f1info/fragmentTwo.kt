@@ -18,16 +18,6 @@ import org.json.JSONObject
 
 class fragmentTwo : Fragment(), View.OnClickListener
 {
-    val baseURL = "https://ergast.com/api/f1"
-    val forwardSlash = "/"
-    val driverStringFilter = "drivers"
-    val constructorsStringFilter = "constructors"
-    val circuitsStringfilter = "circuits"
-
-    val resultsStringFilter = "results" //jsonFilter se spaja sa resultsStringFilter, ali je su ova dva filtra ostavljena odvojena zbog potreba tijekom testiranja
-    val jsonFilter = ".json"
-
-
     companion object
     {
         fun newInstance() : fragmentTwo
@@ -61,18 +51,17 @@ class fragmentTwo : Fragment(), View.OnClickListener
                 Toast.makeText(v?.context, "Please enter one of three remaining fields", Toast.LENGTH_LONG).show()
 
             }
-            else if(driverInput.text.isNotEmpty() && teamInput.text.isEmpty() && circuitInput.text.isEmpty())
+            else if(driverInput.text.isNotEmpty() && teamInput.text.isEmpty() && circuitInput.text.isEmpty())   // Driver query
             {
-                //Toast.makeText(v?.context, "Driver name entered", Toast.LENGTH_SHORT).show()
                 buildDriverApiCall()
             }
-            else if(circuitInput.text.isNotEmpty() && teamInput.text.isEmpty() && driverInput.text.isEmpty())
+            else if(circuitInput.text.isNotEmpty() && teamInput.text.isEmpty() && driverInput.text.isEmpty())   // Circuit query
             {
-                Toast.makeText(v?.context, "Circuit entered", Toast.LENGTH_SHORT).show()
+                buildCircuitApiCall()
             }
-            else if(teamInput.text.isNotEmpty() && circuitInput.text.isEmpty() && driverInput.text.isEmpty())
+            else if(teamInput.text.isNotEmpty() && circuitInput.text.isEmpty() && driverInput.text.isEmpty())   // Team query
             {
-                Toast.makeText(v?.context, "Team entered", Toast.LENGTH_SHORT).show()
+                buildConstructorApiCall()
             }
             else
             {
@@ -99,12 +88,14 @@ class fragmentTwo : Fragment(), View.OnClickListener
 
     private fun buildCircuitApiCall()
     {
-        // TO DO...
+        val apiCallURL = baseURL + forwardSlash + yearInput.text.toString() + forwardSlash + circuitsStringfilter + forwardSlash + circuitInput.text.toString() + forwardSlash + resultsStringFilter + jsonFilter
+        callStatisticsResults(apiCallURL)
     }
 
     private fun buildConstructorApiCall()
     {
-        // TO DO...
+        val apiCallURL = baseURL + forwardSlash + yearInput.text.toString() + forwardSlash + constructorsStringFilter + forwardSlash + teamInput.text.toString() + forwardSlash + resultsStringFilter + jsonFilter
+        callStatisticsResults(apiCallURL)
     }
 
 

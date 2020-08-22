@@ -27,4 +27,14 @@
         android:text="It's a trap"
         />
 
+    <TableLayout
+        android:id="@+id/dataTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/testTextView"
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
