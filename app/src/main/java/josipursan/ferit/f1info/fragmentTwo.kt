@@ -99,7 +99,7 @@ class fragmentTwo : Fragment(), View.OnClickListener
     }
 
 
-    /*fun driverQuery(v: View?)
+    fun driverQuery(v: View?)
     {
         val queue = Volley.newRequestQueue(v?.context)
         val apiCallURL = baseURL + forwardSlash + yearInput.text + forwardSlash + driverStringFilter + forwardSlash + driverInput.text + "results.json"
@@ -111,6 +111,6 @@ class fragmentTwo : Fragment(), View.OnClickListener
             Response.ErrorListener { Toast.makeText(v?.context, "Error occured", Toast.LENGTH_LONG).show() })
 
         queue.add(apiExecution)
-    }*/
+    }
 
 }
