@@ -1,6 +1,7 @@
 package josipursan.ferit.f1info
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,11 +50,10 @@ class fragmentTwo : Fragment(), View.OnClickListener
             if(driverInput.text.isEmpty() && circuitInput.text.isEmpty() && teamInput.text.isEmpty())
             {
                 Toast.makeText(v?.context, "Please enter one of three remaining fields", Toast.LENGTH_LONG).show()
-
             }
             else if(driverInput.text.isNotEmpty() && teamInput.text.isEmpty() && circuitInput.text.isEmpty())   // Driver query
             {
-                buildDriverApiCall()
+                buildDriverApiCallAndShowResults()
             }
             else if(circuitInput.text.isNotEmpty() && teamInput.text.isEmpty() && driverInput.text.isEmpty())   // Circuit query
             {
@@ -80,10 +80,11 @@ class fragmentTwo : Fragment(), View.OnClickListener
     }
 
 
-    private fun buildDriverApiCall()
+    private fun buildDriverApiCallAndShowResults()
     {
-        val apiCallURL = baseURL + forwardSlash + yearInput.text.toString() + forwardSlash + driverStringFilter + forwardSlash + driverInput.text.toString() + forwardSlash + resultsStringFilter + jsonFilter
-        callStatisticsResults(apiCallURL)
+        val apiCallURL = baseURL + forwardSlash + yearInput.text.toString() + forwardSlash + driverStringFilter + forwardSlash + driverInput.text.toString() + forwardSlash + resultsStringFilter
+        val browserIntent : Intent = Intent(Intent.ACTION_VIEW, Uri.parse(apiCallURL))
+        startActivity(browserIntent)
     }
 
     private fun buildCircuitApiCall()
