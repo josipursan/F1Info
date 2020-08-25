@@ -50,49 +50,42 @@ class StatisticsResults : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this)
 
         val apiExecution = JsonObjectRequest(Request.Method.GET, intent.getStringExtra(
-            EXTRA_APICALLURL), null, Response.Listener { response -> showQueryResult(response) },
+            EXTRA_APICALLURL), null, Response.Listener { response -> circuitQueryDataGathering(response) },
             Response.ErrorListener{error -> Toast.makeText(this, error.toString(), Toast.LENGTH_LONG).show()})
 
         queue.add(apiExecution)
     }
 
-    private fun showQueryResult(ergastResponse : JSONObject)
+    private fun circuitQueryDataGathering(ergastResponse : JSONObject)
     {
         var firstLayer = ergastResponse.getJSONObject("MRData").getJSONObject("RaceTable").getJSONArray("Races").getJSONObject(0)
         var resultsLayer = firstLayer.getJSONArray("Results")
-        //var test = firstLayer.getJSONArray("Results").getJSONObject(0).getJSONObject("Driver")["driverId"] //["raceName"]
 
-        var test = firstLayer["date"]
-
-        var tableHeaderBasicData = JSONObject()
-        tableHeaderBasicData.put("Race name", firstLayer["raceName"])
-        tableHeaderBasicData.put("Season", firstLayer["season"])
-        tableHeaderBasicData.put("Date", firstLayer["date"])
-
-
-        //lateinit var matrixtest : Array<Array<Any>>
-        var twoDimArrayOfDataForTable = Array(5){ arrayOfNulls<Any>(resultsLayer.length())}
+        var twoDimArrayOfDataForTable = Array(6){ arrayOfNulls<Any>(resultsLayer.length())}
         // 0 -> position
         // 1 -> points
         // 2 -> givenName
         // 3 -> familyName
         // 4 -> constructorName
 
-        var i = 0
+        // Podaci koji popunjavaju header tablice, tj. osnovne podatke o utrci
+        twoDimArrayOfDataForTable[5][0] = firstLayer["raceName"]
+        twoDimArrayOfDataForTable[5][1] = firstLayer["season"]
+        twoDimArrayOfDataForTable[5][2] = firstLayer["date"]
+
+        // Pozicija, bodovi, ime, prezime, ekipa - podaci koji se povlace iz Results JSON arraya iterativno jer za svakog vozaca postoji JSONObject u Results JSONArrayu
         for(i in 0..resultsLayer.length()-1)
         {
             twoDimArrayOfDataForTable[0][i] = resultsLayer.getJSONObject(i)["position"]
             twoDimArrayOfDataForTable[1][i] = resultsLayer.getJSONObject(i)["points"]
-
-            //matrixtest[0][1] = resultsLayer.getJSONObject(0)["position"]
-            //matrixtest[1][i] = resultsLayer.getJSONObject(i)["points"]
+            twoDimArrayOfDataForTable[2][i] = resultsLayer.getJSONObject(i).getJSONObject("Driver")["givenName"]
+            twoDimArrayOfDataForTable[3][i] = resultsLayer.getJSONObject(i).getJSONObject("Driver")["familyName"]
+            twoDimArrayOfDataForTable[4][i] = resultsLayer.getJSONObject(i).getJSONObject("Constructor")["name"]
         }
 
-        Toast.makeText(this, twoDimArrayOfDataForTable[0][1].toString(), Toast.LENGTH_LONG).show()
+        createTableCircuitData(twoDimArrayOfDataForTable)
 
-
-
-
+        //Toast.makeText(this, twoDimArrayOfDataForTable[5][3].toString(), Toast.LENGTH_LONG).show()
 
 
 
@@ -100,6 +93,11 @@ class StatisticsResults : AppCompatActivity() {
         // U tom trenutku kad smo pokupili getJSONArray, moze se iskoristiti length() metoda da se dobije broj utrka za tog vozaca za tu sezonu.
         // Kada smo usli u listu pomocu metode getJSONArray, potrebno je koji JSONObject zelimo, tj. u slucaju utrke koju utrku zelimo (0,1,2,....). Ovo se radi metodom getJSONObject kojoj se predaje indeks.
         // Kada smo odabrali utrku koju zelimo, jednostavno u tom polju odabiremo koji podataka nam treba.
+    }
+
+    private fun createTableCircuitData(gatheredData : Array<Array<Any?>>)
+    {
+        Toast.makeText(this, gatheredData[2][0].toString(), Toast.LENGTH_LONG).show()
     }
 
     // test popunjavanja tablice - za sada je plan praznu tablicu definiranu u statistics_results.xml popuniti s podacima ovisno o queryu ->
