@@ -6,4 +6,6 @@
 
     <color name = "primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#707070</color>
+
+    <color name="cardViewBackgroundColor_queryInformation">#A3A3A3</color>
 </resources>

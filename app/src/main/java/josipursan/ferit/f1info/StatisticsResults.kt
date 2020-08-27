@@ -3,17 +3,18 @@ package josipursan.ferit.f1info
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.TableLayout
-import android.widget.TableRow
-import android.widget.TextView
-import android.widget.Toast
+import android.util.TypedValue
+import android.view.Gravity
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.statistics_results.*
 import org.json.JSONObject
+import org.w3c.dom.Text
 
 
 class StatisticsResults : AppCompatActivity() {
@@ -31,12 +32,12 @@ class StatisticsResults : AppCompatActivity() {
 
         if(circuitsStringfilter in intent.getStringExtra(EXTRA_APICALLURL))
         {
-            testTextView.setText(intent.getStringExtra(EXTRA_APICALLURL))
+            //testTextView.setText(intent.getStringExtra(EXTRA_APICALLURL))
             executeAPI()
         }
         else if(constructorsStringFilter in intent.getStringExtra(EXTRA_APICALLURL))
         {
-            testTextView.setText(intent.getStringExtra(EXTRA_APICALLURL))
+            //testTextView.setText(intent.getStringExtra(EXTRA_APICALLURL))
             executeAPI()
         }
 
@@ -105,26 +106,38 @@ class StatisticsResults : AppCompatActivity() {
     // Treba povecati velicinu fonta, centrirati elemente u tablici, staviti odgovarajuce paddinge, itd. da to sve ostavlja odredeni dojam.
     private fun createTable()
     {
-        var dataTableHead = TableRow(this)
-        dataTableHead.setBackgroundColor(Color.YELLOW)
-        dataTableHead.setLayoutParams(
-            TableLayout.LayoutParams(
-                TableLayout.LayoutParams.MATCH_PARENT,
-                TableLayout.LayoutParams.WRAP_CONTENT
-            )
-        )
 
-        var tVLabel = TextView(this)
-        tVLabel.setText("Hello")
-        tVLabel.setTextColor(Color.CYAN)
-        dataTableHead.addView(tVLabel)
 
-        var anotherTV = TextView(this)
-        anotherTV.setText("Hennloo")
-        anotherTV.setTextColor(Color.MAGENTA)
-        dataTableHead.addView(anotherTV)
+        var testTv = TextView(this)
+        testTv.setText("Wuba wuba wub")
 
-        dataTable.addView(dataTableHead)
+        val params1 = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+            ).apply{
+            gravity = Gravity.RIGHT
+            rightMargin = 10
+            topMargin = 15
+        }
+
+        leftSection.addView(testTv, params1)
+
+        var test2 = TextView(this)
+        test2.setText("pls werk")
+        test2.setTextSize(20F)
+
+        val params2 = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        ).apply{
+            gravity = Gravity.LEFT
+            leftMargin = 10
+            topMargin = 15
+        }
+
+        rightSection.addView(test2, params2)
+
+
     }
 
 

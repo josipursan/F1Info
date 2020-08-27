@@ -4,4 +4,12 @@
     <string name="infoFeedItem_topTextView">Placeholder text 1</string>
     <string name = "infoFeedItem_bottomTextView">Placeholder text 2</string>
 
+
+    <string name="firstCardTitle">Driver query</string>
+    <string name = "firstCardDescription">To query driver, enter year and driver\'s last name</string>
+    <string name="secondCardTitle">Circuit query</string>
+    <string name="secondCardDescription">To query race results for a circuit, enter year and circuit name</string>
+    <string name="thirdCardTitle">Team query</string>
+    <string name="thirdCardDescription">To query results of a team, enter year and the name of the team</string>
+
 </resources>

@@ -11,6 +11,19 @@
 
     <dimen name = "infoFeedItem_leftMarginFromPicutre">15dp</dimen>
 
+    <dimen name="firstCard_topMargin">50dp</dimen>
+
+    <dimen name="queryInformationCards_cornerRadius">10dp</dimen>
+    <dimen name="queryInformationCards_endStartMargin">10dp</dimen>
+    <dimen name="queryInformationCards_constraintLayoutPadding">2dp</dimen>
+
+    <dimen name="queryInformationCards_textViewFontSize">20sp</dimen>
+    <dimen name="queryInformationCards_textViewStartMargin">20dp</dimen>
+
+    <dimen name="queryInformationCards_expandableSectionPadding">20dp</dimen>
+
+    <dimen name="queryInformationCards_textViewMaxWidth">300dp</dimen>
+
 
 
 </resources>
