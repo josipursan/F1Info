@@ -24,19 +24,6 @@ class MainActivity : AppCompatActivity() {
         startUI()
 
 
-        val queue = Volley.newRequestQueue(this)
-        val url = "https://ergast.com/api/f1/2008/5/results.json"
-
-        /*val stringRequest = StringRequest(Request.Method.GET, url,
-            Response.Listener<String>{response ->
-                val json = JSONObject(response)
-                val extractedElement = json.getJSONObject("MRData")
-                Toast.makeText(this, extractedElement.getString("RaceTable").toString(), Toast.LENGTH_LONG).show()
-                //Toast.makeText(this, response::class.simpleName, Toast.LENGTH_LONG).show()
-            },
-            Response.ErrorListener { Toast.makeText(this, "Failure", Toast.LENGTH_LONG).show()})
-
-        queue.add(stringRequest)*/
     }
 
     private fun startUI()
@@ -44,11 +31,4 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = fragmentAdapter(supportFragmentManager)
         tabLayout.setupWithViewPager(viewPager)
     }
-
-
-
-
-    // Sada je potrebno napraviti listu RecyclerViewItem-a koja se prosljeduje ReyclerVieAdapteru koji sve te iteme prikazuje u RecyclerViewu
-    // Ovo znaci da tu (ili u nekoj fajli sa strane) moram handlati rukovanje s Reddit API-jem i povlacenje podataka iz Firebase-a za postove o stazama.
-
 }

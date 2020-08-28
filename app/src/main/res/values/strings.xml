@@ -6,10 +6,13 @@
 
 
     <string name="firstCardTitle">Driver query</string>
-    <string name = "firstCardDescription">To query driver, enter year and driver\'s last name</string>
+    <string name ="firstCardDescription">To query results of a driver during a season, enter year and driver\'s last name.</string>
+
     <string name="secondCardTitle">Circuit query</string>
-    <string name="secondCardDescription">To query race results for a circuit, enter year and circuit name</string>
+    <string name="secondCardDescription">To query race results for a circuit, enter year and circuit name.</string>
+
     <string name="thirdCardTitle">Team query</string>
-    <string name="thirdCardDescription">To query results of a team, enter year and the name of the team</string>
+    <string name="thirdCardDescription">To query results of a team during a season, enter year and the name of the team.</string>
+
 
 </resources>

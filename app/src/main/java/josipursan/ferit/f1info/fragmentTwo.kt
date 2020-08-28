@@ -43,12 +43,17 @@ class fragmentTwo : Fragment(), View.OnClickListener
         val secondCardExpandButton = view.findViewById<Button>(R.id.secondCardDropDownArrow)
         secondCardExpandButton.setOnClickListener(this)
 
+        val thirdCardExpandButton = view.findViewById<Button>(R.id.thirdCardDropDownArrow)
+        thirdCardExpandButton.setOnClickListener(this)
+
         val first_card = view.findViewById<CardView>(R.id.firstCard)
         first_card.setOnClickListener(this)
 
         val second_card = view.findViewById<CardView>(R.id.secondCard)
         second_card.setOnClickListener(this)
 
+        val third_card = view.findViewById<CardView>(R.id.thirdCard)
+        third_card.setOnClickListener(this)
 
 
         return view
@@ -125,6 +130,26 @@ class fragmentTwo : Fragment(), View.OnClickListener
                 secondCardTitle.setText(R.string.secondCardTitle)
                 secondCardTitle.setTextSize(20F)
                 secondCardDropDownArrow.setBackgroundResource(R.drawable.ic_arrow_drop_down_black_24dp)
+            }
+        }
+
+        else if(v?.id == R.id.thirdCardDropDownArrow || v?.id == R.id.thirdCard)
+        {
+            @TargetApi(19)
+            if(thirdExpandableSection.visibility == View.GONE)
+            {
+                TransitionManager.beginDelayedTransition(thirdCard, AutoTransition())
+                thirdExpandableSection.visibility = View.VISIBLE
+                thirdCardTitle.setText(R.string.thirdCardDescription)
+                thirdCardTitle.setTextSize(15F)
+                thirdCardDropDownArrow.setBackgroundResource(R.drawable.ic_arrow_drop_up_black_24dp)
+            }
+            else
+            {
+                thirdExpandableSection.visibility = View.GONE
+                thirdCardTitle.setText(R.string.thirdCardTitle)
+                thirdCardTitle.setTextSize(20F)
+                thirdCardDropDownArrow.setBackgroundResource(R.drawable.ic_arrow_drop_down_black_24dp)
             }
         }
 

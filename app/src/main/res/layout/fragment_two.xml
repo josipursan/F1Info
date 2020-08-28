@@ -210,5 +210,68 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Third card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thirdCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/secondCard"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="@dimen/queryInformationCards_endStartMargin"
+        android:layout_marginStart="@dimen/queryInformationCards_endStartMargin"
+        app:cardCornerRadius="@dimen/queryInformationCards_cornerRadius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerLayoutThirdCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/queryInformationCards_constraintLayoutPadding"
+            android:background="@color/cardViewBackgroundColor_queryInformation">
+
+            <TextView
+                android:id="@+id/thirdCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thirdCardTitle"
+                android:textSize="@dimen/queryInformationCards_textViewFontSize"
+                android:textAlignment="center"
+
+                android:maxWidth="@dimen/queryInformationCards_textViewMaxWidth"
+                android:layout_marginStart="@dimen/queryInformationCards_textViewStartMargin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:textColor="@color/primaryTextColor"/>
+
+            <Button
+                android:id="@+id/thirdCardDropDownArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:background="@drawable/ic_arrow_drop_down_black_24dp"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/thirdExpandableSection"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/queryInformationCards_expandableSectionPadding"
+
+                android:visibility="gone"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thirdCardTitle">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
