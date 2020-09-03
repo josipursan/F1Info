@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238691044265",
+    "firebase_url": "https://f1info-e2690.firebaseio.com",
+    "project_id": "f1info-e2690",
+    "storage_bucket": "f1info-e2690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238691044265:android:6714d26a32e720f54a92b8",
+        "android_client_info": {
+          "package_name": "josipursan.ferit.f1info"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238691044265-g8upv51bedfqdcb981nis1ljk06d9giv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "josipursan.ferit.f1info",
+            "certificate_hash": "3470c25d0fe112bc546459d43983413859df09cc"
+          }
+        },
+        {
+          "client_id": "238691044265-iispl0vimmvjeq7d7c8olpetv634n1jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuU5JbFLjxmWFiUzLraOxRFMWQKEUWejg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238691044265-iispl0vimmvjeq7d7c8olpetv634n1jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

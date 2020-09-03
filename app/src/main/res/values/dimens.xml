@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="recyclerViewInfoFragment_MarginFromTop">30dp</dimen>
+    <dimen name="recyclerViewInfoFragment_MarginFromTop">50dp</dimen>
     <dimen name = "recyclerViewInfoFragment_LeftRightBottomMargin">6dp</dimen>
 
     <dimen name = "infoFeedItem_topTextSize">18sp</dimen>

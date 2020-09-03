@@ -16,6 +16,8 @@ class RecyclerViewAdapter(private val itemList: List<RecyclerViewItem>) : Recycl
         val imageView : ImageView = itemView.imageView_infoFeedItem
         val upperText : TextView = itemView.topTextView_infoFeedItem
         val bottomText : TextView = itemView.bottomTextView_infoFeedItem
+        val info1Text : TextView = itemView.info1_textView
+        val info2Text : TextView = itemView.info2_textView
     }
 
     //poziva se za svaki item koji je na screenu, i nekoliko najblizih van screena
@@ -33,6 +35,8 @@ class RecyclerViewAdapter(private val itemList: List<RecyclerViewItem>) : Recycl
         holder.imageView.setImageResource(currentItem.imageResource)
         holder.upperText.text = currentItem.upperText
         holder.bottomText.text = currentItem.bottomText
+        holder.info1Text.text = "Corners : " + currentItem.info1
+        holder.info2Text.text = "Length : " + currentItem.info2
     }
 
     override fun getItemCount() = itemList.size
