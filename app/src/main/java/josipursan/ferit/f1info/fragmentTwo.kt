@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley
 import com.beust.klaxon.json
 import kotlinx.android.synthetic.main.fragment_two.*
 import org.json.JSONObject
+import java.util.*
 
 class fragmentTwo : Fragment(), View.OnClickListener
 {
@@ -54,7 +55,6 @@ class fragmentTwo : Fragment(), View.OnClickListener
 
         val third_card = view.findViewById<CardView>(R.id.thirdCard)
         third_card.setOnClickListener(this)
-
 
         return view
     }
@@ -152,7 +152,6 @@ class fragmentTwo : Fragment(), View.OnClickListener
                 thirdCardDropDownArrow.setBackgroundResource(R.drawable.ic_arrow_drop_down_black_24dp)
             }
         }
-
     }
 
 

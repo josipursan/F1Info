@@ -1,5 +1,6 @@
 package josipursan.ferit.f1info
 
+import android.annotation.TargetApi
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,12 +21,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_one.*
 import kotlinx.android.synthetic.main.fragment_two.*
 import org.json.JSONObject
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     val circuitList = ArrayList<RecyclerViewItem>()
-
+    val contextToPass = this
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,11 +55,12 @@ class MainActivity : AppCompatActivity() {
                         var length = circuit.child("length").getValue().toString()
                         var latitude = circuit.child("latitude").getValue().toString()
                         var longitude = circuit.child("longitude").getValue().toString()
+                        var date = circuit.child("date").getValue().toString()
 
-                        circuitList += RecyclerViewItem(R.drawable.race_track_icon, name, country, corners, length, longitude, latitude)
+                        circuitList += RecyclerViewItem(R.drawable.race_track_icon, name, country, corners, length, longitude, latitude, date)
                     }
                 }
-                recyclerView_infoFragment.adapter = RecyclerViewAdapter(circuitList)
+                recyclerView_infoFragment.adapter = RecyclerViewAdapter(circuitList, contextToPass)
                 recyclerView_infoFragment.layoutManager = LinearLayoutManager(applicationContext)
                 recyclerView_infoFragment.setHasFixedSize(true)
             }

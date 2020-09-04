@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="@dimen/infoFeedItems_cardHeight"
 
     android:layout_marginRight="@dimen/infoFeedItem_cardMargin"
     android:layout_marginLeft="@dimen/infoFeedItem_cardMargin"
@@ -38,6 +38,7 @@
 
             android:textColor="@color/primaryTextColor"
 
+            android:maxWidth="@dimen/infoFeedItems_maxWidth"
             android:textSize="@dimen/infoFeedItem_topTextSize"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imageView_infoFeedItem"
@@ -84,12 +85,25 @@
             android:text="@string/infoFeedItems_info2TextView"
             />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info3_textView"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@id/info2_textView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="6dp"
+
+            android:text="@string/infoFeedItems_info3TextView"
+            />
+
         <Button
             android:id="@+id/showCircuit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            app:layout_constraintTop_toBottomOf="@id/info1_textView"
+            app:layout_constraintTop_toBottomOf="@id/info2_textView"
             app:layout_constraintBottom_toTopOf="@id/info2_textView"
             app:layout_constraintRight_toRightOf="parent"
 

@@ -16,7 +16,13 @@
 
     <string name="infoFeedItems_info1TextView">Corners : </string>
     <string name="infoFeedItems_info2TextView">Length : </string>
+    <string name="infoFeedItems_info3TextView">Date : </string>
     <string name="infoFeedItems_showCoordinatesButton">Show circuit</string>
+
+    <string name="editText_yearHint">Year</string>
+    <string name="editText_circuitHint">Circuit</string>
+    <string name="editText_driverHint">Driver</string>
+    <string name="editText_teamHint">Team</string>
 
 
 </resources>

@@ -24,6 +24,12 @@
 
     <dimen name="queryInformationCards_textViewMaxWidth">300dp</dimen>
 
+    <dimen name="infoFeedItems_maxWidth">280dp</dimen>
+
+    <dimen name="infoFeedItems_cardHeight">160dp</dimen>
+
+    <dimen name="fragmentTwo_firstEditTextTopMargin">55dp</dimen>
+
 
 
 </resources>
