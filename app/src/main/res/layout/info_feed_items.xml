@@ -14,8 +14,6 @@
         android:layout_height="match_parent"
         android:padding="@dimen/infoFeedItem_padding">
 
-        <!-- ImageView koji prikazuju ikonu reddita ukoliko se radi o postu s reddita ili ikonu za stazu koja se prikazuje
-        kod svakog itema koji je staza-->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView_infoFeedItem"
 
@@ -27,7 +25,6 @@
 
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Ovaj textview je gornji textview i sadrzi naslov posta s reddita/ime utrke-->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/topTextView_infoFeedItem"
             android:layout_width="wrap_content"
@@ -44,9 +41,6 @@
             app:layout_constraintLeft_toRightOf="@id/imageView_infoFeedItem"
             app:layout_constraintTop_toTopOf="@id/imageView_infoFeedItem" />
 
-        <!-- Ovaj textview je bottom textview i sadrzi nekakav kratki opis posta s reddita (ili komentar)/
-         tj. nekakav opis nadolazece utrke
-         -->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/bottomTextView_infoFeedItem"
             android:layout_width="wrap_content"
